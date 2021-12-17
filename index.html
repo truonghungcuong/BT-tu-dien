@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="select1">
+    <option value="1">Tiếng Việt</option>
+    <option value="2">Tiếng Anh</option>
+</select>
+<br>
+<input type="text" id="timkiem" placeholder="Tim kiem">
+<input type="text" id="ketqua" placeholder="kết quả">
+<button onclick="kiemtra()">Tìm kiếm</button>
+<script>
+    let tienganh = ["dog", "cat", "pig"];
+    let tiengviet = ["chó", "mèo", "lợn"];
+
+    function kiemtra() {
+        let language1 = document.getElementById("select1").value;
+        let timkiem1 = document.getElementById("timkiem").value;
+        let index1 = -1;
+        let index2 = -1;
+        if (language1 === "2") {
+            for (i = 0; i < tienganh.length; i++) {
+                if (tienganh[i] === timkiem1) {
+                    index1 = i;
+                    break;
+                }
+            }
+            if (index1 === -1) {
+                document.getElementById("ketqua").value = "không tìm thấy";
+            } else {
+                document.getElementById("ketqua").value = tiengviet[i];
+            }
+        } else if (language1 === "1") {
+            for (i = 0; i < tiengviet.length; i++) {
+                if (tiengviet[i] === timkiem1) {
+                    index2 = i;
+                    break;
+                }
+            }
+            if (index2 === -1) {
+                document.getElementById("ketqua").value = "không tìm thấy";
+            } else {
+                document.getElementById("ketqua").value = tienganh[i];
+            }
+        }
+    }
+</script>
+</body>
+</html>
